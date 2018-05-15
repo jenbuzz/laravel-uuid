@@ -4,7 +4,9 @@ namespace DanLyn\LaravelUuid\Traits;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\Eloquent\Model;
 use DanLyn\LaravelUuid\Exceptions\UuidColumnNotFoundException;
+use InvalidArgumentException;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
 trait Uuid
@@ -13,20 +15,20 @@ trait Uuid
 
     public static function bootUuid()
     {
-        static::creating(function ($model) {
+        static::creating(function (Model $model) {
             if ((new static)->hasColumnUuid($model)) {
                 $model->setUuid((new static)->generateUuid());
             }
         });
 
-        static::saving(function ($model) {
+        static::saving(function (Model $model) {
             if ((new static)->hasColumnUuid($model) && $model->getGenerateOnSave() && !$model->getUuid()) {
                 $model->setUuid((new static)->generateUuid());
             }
         });
     }
 
-    private function hasColumnUuid($model)
+    private function hasColumnUuid(Model $model): bool
     {
         if (!Schema::hasColumn($model->getTable(), $model->getUuidColumnName())) {
             throw new UuidColumnNotFoundException(
@@ -58,28 +60,28 @@ trait Uuid
         return $this->{$this->getUuidColumnName()};
     }
 
-    public function setUuid($uuid)
+    public function setUuid(string $uuid)
     {
         $this->{$this->getUuidColumnName()} = $uuid;
     }
 
-    public function getUuidColumnName()
+    public function getUuidColumnName(): string
     {
         return !empty($this->uuidColumnName) ? $this->uuidColumnName : 'uuid';
     }
 
-    public function getUuidVersion()
+    public function getUuidVersion(): string
     {
         return !empty($this->uuidVersion) && in_array($this->uuidVersion, $this->validUuidVersions) ?
             $this->uuidVersion : 4;
     }
 
-    public function getUuidString()
+    public function getUuidString(): string
     {
         return !empty($this->uuidString) ? $this->uuidString : '';
     }
 
-    public function getGenerateOnSave()
+    public function getGenerateOnSave(): bool
     {
         return !empty($this->uuidGenerateOnSave) ? $this->uuidGenerateOnSave : false;
     }
