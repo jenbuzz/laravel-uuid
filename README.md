@@ -23,12 +23,15 @@ class MyModel extends Model
 
 ```
 
-There are several options to specify which type of uuid should be generated: 'uuidVersion', 'uuidString', and 'uuidColumnName'. But first...
+There are several options to specify which type of uuid should be generated: 'uuidVersion', 'uuidString', 'uuidColumnName', and 'uuidGenerateOnSave'. But first...
 
 Default values are:
 - uuidVersion = 4
 - uuidString = ''
 - uuidColumnName = 'uuid'
+- uuidGenerateOnSave = false
+
+The last option, 'uuidGenerateOnSave', will generate a uuid for the element on the next save action. This is could be useful if uuids were introduced later on and existing elements need a uuid.
 
 To change these they can be specified through class variables in the model as in the following example:
 ```php
@@ -46,6 +49,7 @@ class MyModel extends Model
     protected $uuidVersion = 5;
     protected $uuidString = 'lorem';
     protected $uuidColumnName = 'my_uuid';
+    protected $uuidGenerateOnSave = true;
 }
 
 ```

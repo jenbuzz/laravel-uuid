@@ -18,6 +18,12 @@ trait Uuid
                 $model->setUuid((new static)->generateUuid());
             }
         });
+
+        static::saving(function ($model) {
+            if ((new static)->hasColumnUuid($model) && $model->getGenerateOnSave() && !$model->getUuid()) {
+                $model->setUuid((new static)->generateUuid());
+            }
+        });
     }
 
     private function hasColumnUuid($model)
@@ -71,6 +77,11 @@ trait Uuid
     public function getUuidString()
     {
         return !empty($this->uuidString) ? $this->uuidString : '';
+    }
+
+    public function getGenerateOnSave()
+    {
+        return !empty($this->uuidGenerateOnSave) ? $this->uuidGenerateOnSave : false;
     }
 
     public static function findByUuid(string $uuid)
