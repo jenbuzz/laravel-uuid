@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Model;
 use DanLyn\LaravelUuid\Exceptions\UuidColumnNotFoundException;
-use InvalidArgumentException;
 use Ramsey\Uuid\Uuid as RamseyUuid;
+use InvalidArgumentException;
 
 trait Uuid
 {
@@ -39,7 +39,7 @@ trait Uuid
         return true;
     }
 
-    public function generateUuid()
+    public function generateUuid(): string
     {
         switch ($this->getUuidVersion()) {
             case 1:
@@ -55,7 +55,7 @@ trait Uuid
         }
     }
 
-    public function getUuid()
+    public function getUuid(): string
     {
         return $this->{$this->getUuidColumnName()};
     }
