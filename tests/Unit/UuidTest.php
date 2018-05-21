@@ -45,4 +45,17 @@ class UuidTest extends TestCase
 
         $this->assertEquals($uuidString, $model->getUuidString());
     }
+
+    public function testGenerateOnSave()
+    {
+        $uuidGenerateOnSave = true;
+
+        $model = new class {
+            use Uuid;
+
+            protected $uuidGenerateOnSave = true;
+        };
+
+        $this->assertEquals($uuidGenerateOnSave, $model->getGenerateOnSave());
+    }
 }
