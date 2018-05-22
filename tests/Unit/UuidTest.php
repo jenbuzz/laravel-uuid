@@ -2,7 +2,7 @@
 
 namespace DanLyn\LaravelUuid\Tests\Unit;
 
-use Tests\TestCase;
+use PHPUnit\Framework\TestCase;
 use DanLyn\LaravelUuid\Traits\Uuid;
 
 class UuidTest extends TestCase
