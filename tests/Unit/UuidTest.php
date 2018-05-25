@@ -1,9 +1,9 @@
 <?php
 
-namespace DanLyn\LaravelUuid\Tests\Unit;
+namespace Jenbuzz\LaravelUuid\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use DanLyn\LaravelUuid\Traits\Uuid;
+use Jenbuzz\LaravelUuid\Traits\Uuid;
 
 class UuidTest extends TestCase
 {

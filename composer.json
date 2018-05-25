@@ -1,5 +1,5 @@
 {
-    "name": "dan-lyn/laravel-uuid",
+    "name": "jenbuzz/laravel-uuid",
     "type": "library",
     "description": "Adds a uuid to a model using ramsey/uuid",
     "version": "0.0.1",
@@ -13,12 +13,12 @@
     "license": "MIT",
     "authors" : [
         {
-          "name": "dan-lyn",
-          "homepage": "https://github.com/dan-lyn/"
+          "name": "jenbuzz",
+          "homepage": "https://github.com/jenbuzz/"
         }
     ],
     "support": {
-        "issues": "https://github.com/dan-lyn/laravel-uuid/issues"
+        "issues": "https://github.com/jenbuzz/laravel-uuid/issues"
     },
     "require": {
         "php": "^7.1",
@@ -31,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "DanLyn\\LaravelUuid\\": "src/"
+            "Jenbuzz\\LaravelUuid\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DanLyn\\LaravelUuid\\Tests\\": "tests/"
+            "Jenbuzz\\LaravelUuid\\Tests\\": "tests/"
         }
     }
 }

@@ -3,7 +3,7 @@ This package easily adds a uuid generated with ramsey/uuid to an Eloquent model.
 
 ## Installation
 
-```composer require dan-lyn/laravel-uuid```
+```composer require jenbuzz/laravel-uuid```
 
 ## Documentation
 To automatically create a uuid for new models all that is needed is to include the uuid trait as in following example:
@@ -14,7 +14,7 @@ To automatically create a uuid for new models all that is needed is to include t
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use DanLyn\LaravelUuid\Traits\Uuid;
+use Jenbuzz\LaravelUuid\Traits\Uuid;
 
 class MyModel extends Model
 {
@@ -40,7 +40,7 @@ To change these options they can be specified through class properties in the mo
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use DanLyn\LaravelUuid\Traits\Uuid;
+use Jenbuzz\LaravelUuid\Traits\Uuid;
 
 class MyModel extends Model
 {

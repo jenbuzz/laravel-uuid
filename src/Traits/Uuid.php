@@ -1,11 +1,11 @@
 <?php
 
-namespace DanLyn\LaravelUuid\Traits;
+namespace Jenbuzz\LaravelUuid\Traits;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Model;
-use DanLyn\LaravelUuid\Exceptions\UuidColumnNotFoundException;
+use Jenbuzz\LaravelUuid\Exceptions\UuidColumnNotFoundException;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 use InvalidArgumentException;
 
