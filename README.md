@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/jenbuzz/laravel-uuid.png?branch=master)](http://travis-ci.org/jenbuzz/laravel-uuid)
+
 # Laravel UUID
 This package easily adds a uuid generated with ramsey/uuid to an Eloquent model.
 
