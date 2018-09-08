@@ -8,7 +8,7 @@ This package easily adds a uuid generated with ramsey/uuid to an Eloquent model.
 ```composer require jenbuzz/laravel-uuid```
 
 ## Documentation
-To automatically create a uuid for new models all that is needed is to include the uuid trait as in following example:
+To automatically create a uuid for new models all that is needed is to include the uuid trait as in the following example:
 
 ```php
 <?php
@@ -25,7 +25,7 @@ class MyModel extends Model
 
 ```
 
-There are several options to specify which type of uuid should be generated: 'uuidVersion', 'uuidString', 'uuidColumnName', and 'uuidGenerateOnSave'. But first...
+There are several options to specify the uuid that should be generated: 'uuidVersion', 'uuidString', 'uuidColumnName', and 'uuidGenerateOnSave'. But first...
 
 Default values are:
 - uuidVersion = 4
@@ -33,7 +33,7 @@ Default values are:
 - uuidColumnName = 'uuid'
 - uuidGenerateOnSave = false
 
-The last option, 'uuidGenerateOnSave', will generate a uuid for the element on the next save action. This could be useful if uuids were introduced later on and existing elements require a uuid.
+The last option, 'uuidGenerateOnSave', will generate a uuid for the element on the next save action if set to true. This could be useful if uuids were introduced later on and existing elements require an uuid.
 
 To change these options they can be specified through class properties in the model as in the following example:
 ```php
@@ -56,7 +56,7 @@ class MyModel extends Model
 
 ```
 
-The uuid trait also adds a find-function to the model which makes it is easy to find an element by uuid. This can be done as in the following code snippet:
+The uuid trait also adds a 'find'-function to the model which makes it is easy to find an element by uuid. This can be done as in the following code snippet:
 ```php
 <?php
 
