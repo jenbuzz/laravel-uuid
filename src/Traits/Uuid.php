@@ -86,7 +86,7 @@ trait Uuid
         return !empty($this->uuidGenerateOnSave) ? $this->uuidGenerateOnSave : false;
     }
 
-    public static function findByUuid(string $uuid)
+    public static function findByUuid(string $uuid): ?Model
     {
         if (!RamseyUuid::isValid($uuid)) {
             return null;
