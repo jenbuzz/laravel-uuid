@@ -2,7 +2,7 @@
     "name": "jenbuzz/laravel-uuid",
     "type": "library",
     "description": "Adds a uuid to a model using ramsey/uuid",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "keywords": [
         "laravel",
         "uuid",
