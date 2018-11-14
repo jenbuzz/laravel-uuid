@@ -22,7 +22,7 @@
     },
     "require": {
         "php": "^7.1",
-        "ramsey/uuid": "^3.7.3",
+        "ramsey/uuid": "^3.8.0",
         "illuminate/database": "^5.6",
         "illuminate/support": "^5.6"
     },
